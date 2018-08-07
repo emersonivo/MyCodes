@@ -1,0 +1,162 @@
+argparse — Parser for command-line options, arguments and sub-commands
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/argparse.html#module-argparse
+
+configparser — Configuration file parser
+	file:///bkp_local/Personal Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/configparser.html#module-configparser
+
+atexit — Exit handlers
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/atexit.html#module-atexit
+
+calendar — General calendar-related functions
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/calendar.html#module-calendar
+
+collections — Container datatypes
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/collections.html#module-collections
+
+contextlib — Utilities for with-statement contexts
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/contextlib.html#module-contextlib
+
+csv — CSV File Reading and Writing
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/csv.html#module-csv
+
+datetime — Basic date and time types
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/datetime.html#module-datetime
+
+dbm — Interfaces to Unix “databases”
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/dbm.html#module-dbm
+
+decimal — Decimal fixed point and floating point arithmetic
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/decimal.html#module-decimal
+
+difflib — Helpers for computing deltas
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/difflib.html#module-difflib
+
+email — An email and MIME handling package
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/email.html#module-email
+
+faulthandler — Dump the Python traceback
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/faulthandler.html#module-faulthandler
+
+filecmp — File and Directory Comparisons
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/filecmp.html#module-filecmp
+
+fileinput — Iterate over lines from multiple input streams
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/fileinput.html#module-fileinput
+
+fnmatch — Unix filename pattern matching
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/fnmatch.html#module-fnmatch
+
+functools — Higher-order functions and operations on callable objects
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/functools.html#module-functools
+
+glob — Unix style pathname pattern expansion
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/glob.html#module-glob
+
+gzip — Support for gzip files
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/gzip.html#module-gzip
+
+hashlib — Secure hashes and message digests
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/hashlib.html#module-hashlib
+
+http — HTTP modules
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/http.html#module-http
+	
+inspect — Inspect live objects
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/inspect.html#module-inspect
+
+io — Core tools for working with streams
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/io.html#module-io
+
+itertools — Functions creating iterators for efficient looping
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/itertools.html#module-itertools
+
+json — JSON encoder and decoder
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/json.html#module-json
+
+logging — Logging facility for Python
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/logging.html#module-logging
+
+os — Miscellaneous operating system interfaces
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/os.html#module-os
+
+operator — Standard operators as functions
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/operator.html#module-operator
+
+os.path — Common pathname manipulations
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/os.path.html#module-os.path
+
+platform — Access to underlying platform’s identifying data
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/platform.html#module-platform
+
+pprint — Data pretty printer
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/pprint.html#module-pprint
+
+random — Generate pseudo-random numbers
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/random.html#module-random
+
+re — Regular expression operations
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/re.html#module-re
+
+readline — GNU readline interface
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/readline.html#module-readline
+
+sched — Event scheduler
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/sched.html#module-sched
+
+secrets — Generate secure random numbers for managing secrets
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/secrets.html#module-secrets
+
+shutil — High-level file operations
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/shutil.html#module-shutil
+
+sqlite3 — DB-API 2.0 interface for SQLite databases
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/sqlite3.html#module-sqlite3
+
+ssl — TLS/SSL wrapper for socket objects
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/ssl.html#module-ssl
+
+stat — Interpreting stat() results
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/stat.html#module-stat
+
+string — Common string operations
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/string.html#module-string
+
+sys — System-specific parameters and functions
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/sys.html#module-sys
+
+tarfile — Read and write tar archive files
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/tarfile.html#module-tarfile
+
+tempfile — Generate temporary files and directories
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/tempfile.html#module-tempfile
+
+time — Time access and conversions
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/time.html#module-time
+
+urllib — URL handling modules
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/urllib.html#module-urllib
+
+warnings — Warning control
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/warnings.html#module-warnings
+
+zipfile — Work with ZIP archives
+	file:///bkp_local/Personal%20Learning/IT/Scripting/Python/Websites/Python.org/docs.python.org/3/library/zipfile.html#module-zipfile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
