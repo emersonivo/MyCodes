@@ -1,0 +1,4 @@
+The with statement ensures that the file is closed correctly,
+and re-opening the file in "w" mode empties the file before you write
+to it. re.sub(pattern, replace, string) is the equivalent
+of s/pattern/replace/ in sed/perl.

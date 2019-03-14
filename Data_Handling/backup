@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<stop>
+    <id>14791</id>
+    <nm>Clark &amp; Balmoral</nm>
+    <sri>
+        <rt>22</rt>
+        <d>North Bound</d>
+        <dd>North Bound</dd>
+    </sri>
+    <cr>22</cr>
+    <pre>
+        <pt>5 MIN</pt>
+        <fd>Howard</fd>
+        <v>1378</v>
+        <rn>22</rn>
+    </pre>
+    <pre>
+        <pt>15 MIN</pt>
+        <fd>Howard</fd>
+        <v>1867</v>
+        <rn>22</rn>
+    </pre>
+</stop>
+
+
+
+<stop>
+    <user id="14791">
+        <res name="windir">
+            <first_seem date="2018-07-31" status="REQUESTED">1</first_seem>
+            <last_seem date="2018-07-31" status="REQUESTED">0</last_seem>
+        </res>
+        <res name="windfs">
+            <first_seem date="2018-07-31" status="REQUESTED">1</first_seem>
+            <last_seem date="2018-07-31" status="REQUESTED">0</last_seem>
+        </res>
+    </user>
+</stop>
+
+<?xml version="1.0"?>
+<stop>
+    <user id="012345">
+        <res name="attrib1">
+            <first_seem date="2018-07-31" status="REQUESTED">1</first_seem>
+            <last_seem date="2018-07-31" status="REQUESTED">0</last_seem>
+        </res>
+        <res name="attrib2">
+            <first_seem date="2018-07-31" status="REQUESTED">1</first_seem>
+            <last_seem date="2018-07-31" status="REQUESTED">0</last_seem>
+        </res>
+    </user>
+    <user id="123456">
+        <res name="attrib1">
+            <first_seem date="2018-07-31" status="REQUESTED">1</first_seem>
+            <last_seem date="2018-07-31" status="INPROCESS">0</last_seem>
+        </res>
+        <res name="attrib2">
+            <first_seem date="2018-07-31" status="REQUESTED">1</first_seem>
+            <last_seem date="2018-07-31" status="REQUESTED">0</last_seem>
+        </res>
+    </user>
+</stop>

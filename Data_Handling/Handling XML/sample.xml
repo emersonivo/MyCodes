@@ -1,0 +1,21 @@
+<stop>
+    <user id="012345">
+        <res name="attrib1">
+            <first_seem date="2018-07-31" status="REQUESTED" />
+            <last_seem date="2018-07-31" status="INPROCESS" />
+        </res>
+        <res name="attrib2">
+            <first_seem date="2018-07-31" status="REQUESTED" />
+            <last_seem date="2018-07-31" status="COMPLETED" />
+        </res>
+        <res name="attrib3">
+            <first_seem date="2018-08-01" status="GRANTED" />
+        </res>
+    </user>
+    <user id="123456">
+        <res name="attrib1">
+            <first_seem date="2018-07-31" status="REQUESTED" />
+            <last_seem date="2018-07-31" status="REQUESTED" />
+        </res>
+    </user>
+</stop>

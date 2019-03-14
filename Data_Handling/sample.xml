@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+<group>
+<child id="a">This is child "a".</child>
+<child id="b">This is child "b".</child>
+</group>
+<group>
+<child id="c">This is child "c".</child>
+</group>
+</root>
