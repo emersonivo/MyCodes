@@ -13,7 +13,7 @@ for F in glob.glob(homedir+'/*.txt'):
                 with open(NewF+'.clean', 'a+') as inNewF:
                     line = line.replace('ble', 'cle').replace('bla', 'fla')
                     inNewF.write(line)
-    #print (NewF)
+    print (NewF)
 # ShortLang = ['PX', 'ES', 'EM', 'FR', 'IT', 'DE']
 # y = ''
 # for L1 in ShortLang:
