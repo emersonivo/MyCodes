@@ -1,6 +1,8 @@
 import os
 from shutil import copyfile
 import glob
+import urllib.request
+import string
 
 homedir = os.getcwd()
 
@@ -9,12 +11,12 @@ ShortLang = ['PX', 'ES', 'EM', 'FR', 'IT', 'DE']
 
 def downloadbla():
 	for L2 in ShortLang:
-		if not os.path.exits(homedir+"/get002":
+		if not os.path.exists(homedir+"/get002"):
             os.mkdir(homedir+"/get002")
-
 		for L1 in ShortLang:
 			if not L2 != L1:
-				curl -k "https://www.goethe-verlag.com/book2/"+L2+"/"+L2+L1+"/"+L2+L1+"002.HTM" > homedir+"/get002/"+L2+L1+"txt+audio.HTM"
+				#os.system("C:\Windows\System32\curl $(curl -u username:password -s https://api.example.com/v1.1/reports/11111?fields=download | jq '.report.download' -r) > 'C:\sample.zip'")
+				os.system("C:\Windows\System32\curl $(curl -k 'https://www.goethe-verlag.com/book2/'"+L2+'/'+L2+L1+'/'+L2+L1+'002.HTM') > homedir+'/get002/'+L2+L1+'txt+audio.HTM')
 				copyfile(homedir+"/get002/"+L2+"txt+audio.HTM", homedir+"/get002/"+L2+L1+"txt.HTM")
 
 def downloadphrases():
@@ -29,9 +31,9 @@ def downloadphrases():
 					elif len(str(x)) == 3:
 						y = str(x)
 
-					print(homedir + "/phrases/" + L1 + L2 + "/" + y)
+					print(homedir+"/phrases/"+L1+L2+"/"+y)
 					#os.mkdir(homedir + "/phrases/" + L1 + L2 + "/" + y)
-					curl -k "https://www.goethe-verlag.com/book2/"$L1"/"$L1""$L2"/"$L1""$L2""$y".HTM" > $homedir"/phrases/"$L1""$L2"/"$y"/"$L1""$L2""$y".HTM"
+					os.system("C:\Windows\System32\curl $(curl -k 'https://www.goethe-verlag.com/book2/'"+L1+'/'+L1+L2+'/'+L1+L2+y+'.HTM' > homedir+'/phrases/'+L1+L2+'/'+y+'/'+L1+L2+y+'.HTM')
 
 def downloadvocab():
 	for L1 in ShortLang:
@@ -44,8 +46,8 @@ def downloadvocab():
 						y=str(x)
 
 					os.mkdir(homedir+"/vocab/"+L1+L2)
-					os.mkdir(homedir+"/vocab/"L1+L2+"/"+y
-					curl -k "https://www.goethe-verlag.com/book2/_VOCAB/"$L1"/"$L1""$L2"/"$y".HTM" > $homedir"/vocab/"$L1""$L2"/"$y"/"$y".HTM"
+					os.mkdir(homedir+"/vocab/"+L1+L2+"/"+y)
+					os.system("C:\Windows\System32\curl $(curl -k 'https://www.goethe-verlag.com/book2/_VOCAB/'"+L1+"/"+L1+L2+"/"+y+".HTM" > homedir+"/vocab/"+L1+L2+"/"+y+"/"+y+".HTM")
 
 def clean002():
 	for L in ShortLang:
@@ -94,7 +96,7 @@ def clearphrases():
 	#		y="$x"
 	#	fi
 	#done
-	for dir in glob.glob(homedir+'/goodvocab/get002/'+L+'*.HTM"); do
+	for dir in glob.glob(homedir+'/goodvocab/get002/'+L+'*.HTM'):
 		if len(dir) == 0:
 			exit
 		for F in dir:
@@ -155,48 +157,46 @@ def changehtmlcodes():
 							outfile.write(Fname+"|"+gotcode+';|'+URL)
 
 	def block2():
-		while IFS="|" read Fname Code Url; do
-			mycode=$(echo $Code | grep -o '&#.*;')
-			if [ "$(grep $mycode htmlcodes)" ]; then
-				replace=$(grep $mycode htmlcodes | awk -F"|" '{print $2}')
-				#echo "$Fname|$mycode|$replace"
-				sed -i "s/$mycode/$replace/g" $Fname
-			else
-				echo "$Fname|$mycode|Code not found" | tee -a $homedir/changehtmlcodes.err
-			fi
-		done < $homedir/changecodes.log
-	}
-	#if [ -f $homedir/changecodes.log ]; then
-	#	read -p "File changecodes.log exist. Use it?" usefile
-	#	if [ "$usefile" == "y" ]; then
-	#		block2
-	#	else
-	#		block1
-	#		block2
-	#	fi
-	#else
-		block1
-		block2
-	#fi
-}
+		with open(homedir+'/changecodes.log', 'rt') as infile:
+			for line1 in infile:
+				Fname = line1.split('|')[0]
+				Code = line1.split('|')[1]
+				URL = line1.split('|')[2]
+				codefile = homedir+'/htmlcodes'
+				if codefile.find(Code):
+					with open(homedir+'/htmlcodes', 'rt') as codelist:
+						for line2 in codelist:
+							if Code in line2:
+								mycode = lines2.split('|')[0]
+					openf = open(Fname, 'r+')
+						for line3 in openf.readlines()
+							string.replace(line3, Code, mycode)
+					openf.close()
+				else:
+					with open(homedir+'/changehtmlcodes.err', 'a+') as codeerror:
+						codeerror.write(Fname+'|'+mycode+'|Code not found')
+	block1
+	block2
 
-clearphrases2(){
-	for F in $(find $homedir/phrases/ -type f -name "*.clean"); do
-		moveline1=$(grep '^##' $F | awk -F"|" '{print $2}')
-		getline2=$(grep '^https' $F )
-		newline2="$moveline1|$getline2"
-		sed -i "s/|$moveline1|/|/g" $F
-		sed -i "s/^https/$moveline1|https/g" $F
-		sed -i 's/##//g' $F
-	done
-}
+def clearphrases2():
+	dir = glob.glob(homedir+'/phrases/*.clean')
+	for file in dir:
+		with open(file, 'r+') as infile:
+			with open(file, 'r+') as outfile:
+				for line1 in infile:
+					moveline1 = line.startswith('##').split('|')[1]
+					getline2 = line.startswith('https')
+					for line2 in outfile:
+						line.replace("|"+moveline1+"|", "|")
+						line.startswith("https").replace("https", moveline1+"|https")
+						line.replace('##', '')
 
-rename(){
-
-	rm -f $homedir/rename.out
-	for L1 in PX ES EM FR IT DE; do
-		for L2 in EM PX ES FR IT DE; do
-			if [ "$L1" != "$L2" ]; then
+def rename():
+	os.remove(homedir+'/rename.out')
+	for L1 in ShortLang:
+		for L2 in ShortLang:
+			if L1 != L2:
+				with glob.glob(homedir+"/phrases")
 				for F in $(find $homedir/phrases/ -type f -name "$L1$L2*.clean"); do
 					NewF=$(basename $F | cut -d. -f1)
 					Dir=$(dirname $F)
