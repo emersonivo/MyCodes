@@ -7,17 +7,17 @@ homedir = os.getcwd()
 URL = "https://www.goethe-verlag.com/book2/"
 ShortLang = ['PX', 'ES', 'EM', 'FR', 'IT', 'DE']
 
-def download002(){
+def downloadbla():
 	for L2 in ShortLang:
-		if not os.path.exits(homedir+"/get002/":
-            os.mkdir($homedir"/get002/")
-		for L1 in ShortLang:
-			if L2 != L1:
-				curl -k "https://www.goethe-verlag.com/book2/"+L2+"/"+L2+L1+"/"+L2+L1+"002.HTM" > homedir+"/get002/"+L2+L1+"txt+audio.HTM"
-				copyfile(homedir+"/get002/"+L2+"txt+audio.HTM" homedir+"/get002/"+L2+L1+"txt.HTM")
-}
+		if not os.path.exits(homedir+"/get002":
+            os.mkdir(homedir+"/get002")
 
-downloadphrases(){
+		for L1 in ShortLang:
+			if not L2 != L1:
+				curl -k "https://www.goethe-verlag.com/book2/"+L2+"/"+L2+L1+"/"+L2+L1+"002.HTM" > homedir+"/get002/"+L2+L1+"txt+audio.HTM"
+				copyfile(homedir+"/get002/"+L2+"txt+audio.HTM", homedir+"/get002/"+L2+L1+"txt.HTM")
+
+def downloadphrases():
 	for L1 in ShortLang:
 		for L2 in ShortLang:
 			if L1 != L2:
@@ -32,9 +32,8 @@ downloadphrases(){
 					print(homedir + "/phrases/" + L1 + L2 + "/" + y)
 					#os.mkdir(homedir + "/phrases/" + L1 + L2 + "/" + y)
 					curl -k "https://www.goethe-verlag.com/book2/"$L1"/"$L1""$L2"/"$L1""$L2""$y".HTM" > $homedir"/phrases/"$L1""$L2"/"$y"/"$L1""$L2""$y".HTM"
-}
 
-downloadvocab(){
+def downloadvocab():
 	for L1 in ShortLang:
 		for L2 in ShortLang:
 			if L1  != L2:
@@ -47,42 +46,45 @@ downloadvocab(){
 					os.mkdir(homedir+"/vocab/"+L1+L2)
 					os.mkdir(homedir+"/vocab/"L1+L2+"/"+y
 					curl -k "https://www.goethe-verlag.com/book2/_VOCAB/"$L1"/"$L1""$L2"/"$y".HTM" > $homedir"/vocab/"$L1""$L2"/"$y"/"$y".HTM"
-}
 
-clean002(){
+def clean002():
 	for L in ShortLang:
-		for F in glob.glob(homedir+'/get002/'+L+"*HTM"):
-            NewF = str(F).split('.')[0]
-			pattern='<a href="'+L
-            with open(F, 'a+') as inNewF:
-                for line in inNewF:
-                    if pattern in line:
-                        with open(homedir+'/goodvocab/get002/'+L+'/'+NewF+'.clean', 'a+') as inNewF:
-                            line = line.replace('s#<a href=','').replace('"><span class="gray">', ';').replace(' </span>', ';').replace('</a>', '')
-                            inNewF.write(line)
-}
+		for dir in glob.glob(homedir+'/get002/'+L+"*HTM"):
+			if len(dir) == 0:
+				exit
+			for F in dir:
+				NewF = str(F).split('.')[0]
+				pattern='<a href="'+L
+				with open(F, 'a+') as inNewF:
+					for line in inNewF:
+						if pattern in line:
+							with open(homedir+'/goodvocab/get002/'+L+'/'+NewF+'.clean', 'a+') as inNewF:
+								line = line.replace('s#<a href=','').replace('"><span class="gray">', ';').replace(' </span>', ';').replace('</a>', '')
+								inNewF.write(line)
 
-changenum002(){
+def changenum002():
 	for L in ShortLang:
-		for F in glob.glob(homedir+'/goodvocab/get002/'+L+'*clear'):
-			NewF = str(F).split('.')[0]
-            with open(F, 'r+') as inNewF:
-                for line in inNewF:
-				    p = line.split(';')[0]
-				    x = line.split(':')[1]
-				    n = line.split(';')[2]
-                    if len(x) == 2:
-                        y = "00"+"x"
-                    elif len(x) == 2:
-                        y = "0"+"x"
-                    elif len(x) == 2:
-                        y="x"
+		for dir in glob.glob(homedir+'/goodvocab/get002/'+L+'*clear'):
+			if len(dir) == 0:
+				exit
+			for F in dir:
+				NewF = str(F).split('.')[0]
+				with open(F, 'r+') as inNewF:
+					for line in inNewF:
+						p = line.split(';')[0]
+						x = line.split(':')[1]
+						n = line.split(';')[2]
+						if len(x) == 2:
+							y = "00"+"x"
+						elif len(x) == 2:
+							y = "0"+"x"
+						elif len(x) == 2:
+							y="x"
 
-                    with open(NewF+".num", 'a+') as outNewF:
-                        outNewF.write(p+";"+y+";"+n)
-}
+						with open(NewF+".num", 'a+') as outNewF:
+							outNewF.write(p+";"+y+";"+n)
 
-clearphrases(){
+def clearphrases():
 	#for x in {3..102}; do
 	#	if [ $(echo $x | wc -c) == 2 ]; then
 	#		y="00$x"
@@ -92,48 +94,67 @@ clearphrases(){
 	#		y="$x"
 	#	fi
 	#done
-	for F in $(find $homedir/phrases/ -type f -name "*.HTM"); do
-		output=$F".clean"
-		sed ':a;N;$!ba;s/\n//g' $F > $output
-		sed -i 's#\r##g' $output
-		sed -i 's#<title>#\n\#\##g' $output
-		sed -i 's#<source src="https#\n\#\#https#g' $output
-		sed -i 's#<span class="Stil36"><b>#\n\#\##g' $output
-		sed -i 's#<span class="Stil36">#\n\#\##g' $output
-		sed -i 's#</span><br /><br /></div></td></tr>#\#\#\n#g' $output
-		sed -i 's#</b></span></div></td></tr></table>#\#\#\n#g' $output
-		sed -i 's#<span class="Stil36"><b>#\n\#\##g' $output
-		sed -i 's#<tr><td><div class="Stil35">#\n\#\##g' $output
-		sed -i 's#</b></span></div></td></tr>#\#\#\n#g' $output
-		sed -i 's#</div></td><td><div class=#\#\#\n#g' $output
-		sed -i 's#" type="audio/mpeg" /></audio></td></tr>#\#\#\n#g' $output
-		sed -i '/^##/!d' $output
-		sed -i '/##$/!d' $output
-		sed -i ':a;N;$!ba;s/\n//g' $output
-		sed -i 's/.mp3####/.mp3\n/g' $output
-		sed -i 's/####/|/g' $output
-	done
-}
+	for dir in glob.glob(homedir+'/goodvocab/get002/'+L+'*.HTM"); do
+		if len(dir) == 0:
+			exit
+		for F in dir:
+			output = str(F).split('.')[0] + ".clean"
+			with open(homedir+'/Podcasts/podcast101/removecarriage.txt', 'rb') as infile:
+				with open(homedir+'/Podcasts/podcast101/removecarriage.clean', 'a+') as outfile:
+				for line in infile:
+					line = line.replace('\n', '').replace('\r', '')
+					line = line.replace('<title>', '\n')
+					line = line.replace('<source src="https', '\n')
+					line = line.replace('<span class="Stil36"><b>', '\n')
+					line = line.replace('<span class="Stil36">', '\n')
+					line = line.replace('</span><br /><br /></div></td></tr>', '##\n')
+					line = line.replace('</b></span></div></td></tr></table>', '##\n')
+					line = line.replace('<span class="Stil36"><b>', '\n###')
+					line = line.replace('<tr><td><div class="Stil35">', '\n##')
+					line = line.replace('</b></span></div></td></tr>', '##\n')
+					line = line.replace('</div></td><td><div class=', '##\n')
+					line = line.replace('" type="audio/mpeg" /></audio></td></tr>', '##\n')
+					outfile.write(line)
 
-changehtmlcodes(){	
-	block1(){
-		for file in $(find $homedir/phrases/ -type f -name "*.clean"); do
-			if [ "$(grep '&#' $file)" ]; then
-				grep -H '&#' $file > $homedir/lines.tmp
-				sed -i 's/.clean:/.clean|/g' $homedir/lines.tmp
-				while IFS="|" read Fname Code Url; do
-					x=$(echo $Code | grep -o '&#' | wc -l)
-					for (( y=1; y<=$x; y++)); do
-						i=$(($y * 2)); 
-						gotcode=$(echo $Code | awk -v a="$i" -F'[&;]' '{print ($a)}')
-						echo "$Fname|&$gotcode;|$Url" | tee -a $homedir/changecodes.log
-					done
-				done < $homedir/lines.tmp
-			fi
-		done
-		sed -i 's/.clean:/.clean|/g' $homedir/changecodes.log
-	}
-	block2(){
+			with open(homedir+'/Podcasts/podcast101/removecarriage.clean', 'a+') as outfile:
+				for line in outfile:
+					if not line.startswith('##') or not line.endswith('##'):
+						outfile.write(line)
+			with open(homedir+'/Podcasts/podcast101/removecarriage.clean', 'a+') as outfile:
+				for line in outfile:
+					line = line.replace('\n', '').replace('\r', '')
+					line = line.replace('.mp3####', '.mp3\n')
+					line = line.replace('####', '|')
+					outfile.write(line)
+
+def changehtmlcodes():
+	def block1():
+		for dir in glob.glob(homedir+'/phrases/*.clean':
+			if len(dir) == 0:
+				exit
+			for file in dir:
+				if file.find('&#'):
+					with open(file, 'rt') as infile:
+						with open(homedir+'/lines.tmp', 'a+') as outfile:
+							for line in infile:
+								outfile.write(str(file)+"|"+line)
+						
+						dir/lines.tmp
+
+		if os.path.isfile(homedir+'/lines.tmp'):
+			with open(homedir+'/lines.tmp', 'rt') as infile:
+				for line in infile:
+					Fname = line.split('|')[0]
+					Code = line.split('|')[1]
+					URL = line.split('|')[2]
+					x = len(line.find('|'))
+					for y in range(1, x + 1):
+						i = ( y * 2)
+						gotcode = line.split('& |;')[i]
+						with open(homedir+'/changecodes.log', 'a+') as outfile:
+							outfile.write(Fname+"|"+gotcode+';|'+URL)
+
+	def block2():
 		while IFS="|" read Fname Code Url; do
 			mycode=$(echo $Code | grep -o '&#.*;')
 			if [ "$(grep $mycode htmlcodes)" ]; then
