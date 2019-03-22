@@ -1,6 +1,7 @@
+import re
 class Book:
     class _blank:
-        def Part_II():
+        class Part_II:
             def Chapter_4():
                 def _Dict(): #Page 166/1594
                     Dict1 = {'a' : '1', 'b' : '2', 'c': '3'}
@@ -29,16 +30,44 @@ class Book:
                     print("Min: ", min(3, 5, 1, 9), "Max: ", max(3, 5, 1, 9))
                 _Math()
             def Chapter_6():
-                a = 3
-                b = a
-                print("#1 a", a, "b", b)
-                a = 5
-                print("#2 a", a, "b", b)
+                def Vars1():
+                    a = 3
+                    b = a
+                    print "#1 a", a, "b", b
+                    a = 5
+                    print "#2 a", a, "b", b
+                def Vars2():
+                    L1 = [2, 4, 6]
+                    L2 = L1
+                    print "L1: ", L1, "| L2: ", L2
+                    L1[0] = 24
+                    print "L1: ", L1, "| L2: ", L2
+                #Vars1
+                Vars2()
+            def Chapter_7():
+                #Page 243/1594
+                MyString = "Salve o Tricolor Paulista, Amado Time Brasileiro"
+                R = MyString.rstrip()
+                print "#1 - Find:", MyString.find("Tricolor")
+                print "           ", MyString
+                print "#2 - rstrip", R, "Didn't work"
+                print "#3 - replace: ", MyString.replace('Time', 'Clube')
+                print "#4 - split: ", MyString.split(',')
+                print "#5 - lower: ", MyString.lower()
+                print "#6 - endeith: ", MyString.endswith(" VAMOS SAO PAULO")
+                print "#7 - join: ", ','.join('string1 string2')
+                print "#8 - encode:", MyString.encode('latin-1')
+                MyShort = "Tricolor"
+                for x in MyShort: print "#9 - iteration: ", x
+                print "#10 - iteration: ", 'Tricolor' in MyString
+                print "#11 - map; ", map(ord, MyShort)
+                print "#12 - match: ", re.match('Tri(.*)or', MyString)
+                print "#13 - match: ", re.match('Tri(.*)or', MyShort) #Page 244/1594
+
             #Chapter_4()
             #Chapter_5()
-            Chapter_6()
-        Part_II()
-
+            #Chapter_6()
+            Chapter_7()
 
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
@@ -55,5 +84,5 @@ class Book:
         #emp2.giveRaise(.10)
         #print(emp2.pay)
 
-Book._blank
+Book._blank.Part_II
 #Book._Worker
