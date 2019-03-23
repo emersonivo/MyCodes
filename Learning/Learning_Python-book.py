@@ -48,22 +48,45 @@ class Book:
                 #Page 243/1594
                 MyString = "Salve o Tricolor Paulista, Amado Time Brasileiro"
                 R = MyString.rstrip()
-                print "#1 - Find:", MyString.find("Tricolor")
-                print "           ", MyString
-                print "#2 - rstrip", R, "Didn't work"
-                print "#3 - replace: ", MyString.replace('Time', 'Clube')
-                print "#4 - split: ", MyString.split(',')
-                print "#5 - lower: ", MyString.lower()
-                print "#6 - endeith: ", MyString.endswith(" VAMOS SAO PAULO")
-                print "#7 - join: ", ','.join('string1 string2')
-                print "#8 - encode:", MyString.encode('latin-1')
-                MyShort = "Tricolor"
-                for x in MyShort: print "#9 - iteration: ", x
-                print "#10 - iteration: ", 'Tricolor' in MyString
-                print "#11 - map; ", map(ord, MyShort)
-                print "#12 - match: ", re.match('Tri(.*)or', MyString)
-                print "#13 - match: ", re.match('Tri(.*)or', MyShort) #Page 244/1594
+                # print "#1 - Find:", MyString.find("Tricolor")
+                # print "           ", MyString
+                # print "#2 - rstrip", R, "Didn't work"
+                # print "#3 - replace: ", MyString.replace('Time', 'Clube')
+                # print "#4 - split: ", MyString.split(',')
+                # print "#5 - lower: ", MyString.lower()
+                # print "#6 - endeith: ", MyString.endswith(" VAMOS SAO PAULO")
+                # print "#7 - join: ", ','.join('string1 string2')
+                # print "#8 - encode:", MyString.encode('latin-1')
+                MyShort = "Salve o Tricolor"
+                # for x in MyShort: print "#9 - iteration: ", x
+                # print "#10 - iteration: ", 'Tricolor' in MyString
+                # print "#11 - map; ", map(ord, MyShort)
+                # print "#12 - match: ", re.match('Tri(.*)or', MyShort) #Do not Work
+                # print "#13 - match: ", re.match('Tri(.*)or', MyShort) #Do not work
+                MyLong = """
+                This is the first line
+                And this is the second"""
+                # print "#14 - MyLong", MyLong
+                # print("#15", "-" * 15)
+                # #for c in MyShort: print("16 :", c, end='') Do not work
+                # print "#17 - Slicing :", MyShort[1:16:2]
+                # print "#18 - Slicing :", MyShort[::2]
+                # print "#19 - Slicing :", MyShort[::-1]
+                # print "#20 - Changing string: %d %s" % (25, 'March')
+                # print "#21 - Look at page {0}/{1} for {2} references".format(262, 1594, 'Method of Strings')
+                # print "#22 - Method lower", MyShort.lower()
+                # print "#23 - split", MyShort.split()
+                # x = 10
+                # print "#24 - Advanced Formatting - Page 271/1594 #a:%d, #b:%-6d, #c:%06d." % (x, x, x) 
 
+                template = '{0}, {1} and {2}'
+                print "#25 - Formatting Method", template.format('spam', 'ham', 'eggs')
+                template = '{key1}, {key2} and {key3}'
+                print "#26 - Formatting Method", template.format(key1='bla', key2='ble', key3='bli')
+                template = '{}, {} and {}'
+                print "#27 - Formatting Method", template.format('spam', 'ham', 'eggs')
+                template = '%s, %s and %s'
+                print "#28 - Formatting Method", template % ('spam', 'ham', 'eggs')
             #Chapter_4()
             #Chapter_5()
             #Chapter_6()
