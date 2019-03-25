@@ -6,91 +6,125 @@ class Book:
                 def _Dict(): #Page 166/1594
                     Dict1 = {'a' : '1', 'b' : '2', 'c': '3'}
                     Dict2 = dict(d='4', e='5', f='6')
-                    print('Dict1:', Dict1)
-                    print('Dict2:', Dict2)
+                    print('#C4.1 Dict1:', Dict1)
+                    print('#C4.2 Dict2:', Dict2)
                 def _Set(): #Page 178/1594
                     Set1 = set('123415671890')
                     Set2 = set('abcdbcdecdefdefg')
-                    print("Set1:", Set1, "Set2:", Set2)
+                    print("#C4.3 Set1:", Set1, "Set2:", Set2)
                     for l in Set2:
                         Set1.add(l)
-                    print(Set1)
+                    print('#C4.4: ', Set1)
                 def _Object(): #Page 180/1594
                     _Set = set('123415671890')
                     _MyDict = dict(a='1', b='2')
-                    print(type(_Set))
-                    print(type(_MyDict))
-                #_Dict()
-                #_Set()
-                #_Object()                    
+                    print('#C4.5: ', type(_Set))
+                    print('#C4.6: ', type(_MyDict))
+                _Dict()
+                _Set()
+                _Object()                    
             def Chapter_5():
                 def _Math(): #Page 207/1594
-                    print("sum: ", sum((1, 2, 3, 4)))
-                    print("sum2: ", (1 + 3))
-                    print("Min: ", min(3, 5, 1, 9), "Max: ", max(3, 5, 1, 9))
+                    print("#C5.1 sum: ", sum((1, 2, 3, 4)))
+                    print("#C5.2 sum2: ", (1 + 3))
+                    print("#C5.3 Min: ", min(3, 5, 1, 9), "Max: ", max(3, 5, 1, 9))
                 _Math()
             def Chapter_6():
                 def Vars1():
                     a = 3
                     b = a
-                    print "#1 a", a, "b", b
+                    print "#C6.1 a", a, "b", b
                     a = 5
-                    print "#2 a", a, "b", b
+                    print "#C6.2 a", a, "b", b
                 def Vars2():
                     L1 = [2, 4, 6]
                     L2 = L1
-                    print "L1: ", L1, "| L2: ", L2
+                    print "#C6.3 L1: ", L1, "| L2: ", L2
                     L1[0] = 24
-                    print "L1: ", L1, "| L2: ", L2
-                #Vars1
+                    print "#C6.4 L1: ", L1, "| L2: ", L2
+                Vars1()
                 Vars2()
             def Chapter_7():
                 #Page 243/1594
                 MyString = "Salve o Tricolor Paulista, Amado Time Brasileiro"
                 R = MyString.rstrip()
-                # print "#1 - Find:", MyString.find("Tricolor")
-                # print "           ", MyString
-                # print "#2 - rstrip", R, "Didn't work"
-                # print "#3 - replace: ", MyString.replace('Time', 'Clube')
-                # print "#4 - split: ", MyString.split(',')
-                # print "#5 - lower: ", MyString.lower()
-                # print "#6 - endeith: ", MyString.endswith(" VAMOS SAO PAULO")
-                # print "#7 - join: ", ','.join('string1 string2')
-                # print "#8 - encode:", MyString.encode('latin-1')
+                print "#C7.1 - Find:", MyString.find("Tricolor")
+                print "           ", MyString
+                print "#C7.2 - rstrip", R, "Didn't work"
+                print "#C7.3 - replace: ", MyString.replace('Time', 'Clube')
+                print "#C7.4 - split: ", MyString.split(',')
+                print "#C7.5 - lower: ", MyString.lower()
+                print "#C7.6 - endeith: ", MyString.endswith(" VAMOS SAO PAULO")
+                print "#C7.7 - join: ", ','.join('string1 string2')
+                print "#C7.8 - encode:", MyString.encode('latin-1')
                 MyShort = "Salve o Tricolor"
-                # for x in MyShort: print "#9 - iteration: ", x
-                # print "#10 - iteration: ", 'Tricolor' in MyString
-                # print "#11 - map; ", map(ord, MyShort)
-                # print "#12 - match: ", re.match('Tri(.*)or', MyShort) #Do not Work
-                # print "#13 - match: ", re.match('Tri(.*)or', MyShort) #Do not work
+                for x in MyShort: print "#9 - iteration: ", x
+                print "#C7.9 - iteration: ", 'Tricolor' in MyString
+                print "#C7.10 - map; ", map(ord, MyShort)
+                print "#C7.11 - match: ", re.match('Tri(.*)or', MyShort) #Do not Work
+                print "#C7.12 - match: ", re.match('Tri(.*)or', MyShort) #Do not work
                 MyLong = """
                 This is the first line
                 And this is the second"""
-                # print "#14 - MyLong", MyLong
-                # print("#15", "-" * 15)
-                # #for c in MyShort: print("16 :", c, end='') Do not work
-                # print "#17 - Slicing :", MyShort[1:16:2]
-                # print "#18 - Slicing :", MyShort[::2]
-                # print "#19 - Slicing :", MyShort[::-1]
-                # print "#20 - Changing string: %d %s" % (25, 'March')
-                # print "#21 - Look at page {0}/{1} for {2} references".format(262, 1594, 'Method of Strings')
-                # print "#22 - Method lower", MyShort.lower()
-                # print "#23 - split", MyShort.split()
-                # x = 10
-                # print "#24 - Advanced Formatting - Page 271/1594 #a:%d, #b:%-6d, #c:%06d." % (x, x, x) 
+                print "#C7.13 - MyLong", MyLong
+                print("#C7.14", "-" * 15)
+                #for c in MyShort: print("#C7.15 :", c, end='') Do not work
+                print "#C7.16 - Slicing :", MyShort[1:16:2]
+                print "#C7.17 - Slicing :", MyShort[::2]
+                print "#C7.18 - Slicing :", MyShort[::-1]
+                print "#C7.19 - Changing string: %d %s" % (25, 'March')
+                print "#C7.20 - Look at page {0}/{1} for {2} references".format(262, 1594, 'Method of Strings')
+                print "#C7.21 - Method lower", MyShort.lower()
+                print "#C7.22 - split", MyShort.split()
+                x = 10
+                print "#C7.23 - Advanced Formatting - Page 271/1594 #a:%d, #b:%-6d, #c:%06d." % (x, x, x) 
 
                 template = '{0}, {1} and {2}'
-                print "#25 - Formatting Method", template.format('spam', 'ham', 'eggs')
+                print "#C7.24 - Formatting Method", template.format('spam', 'ham', 'eggs')
                 template = '{key1}, {key2} and {key3}'
-                print "#26 - Formatting Method", template.format(key1='bla', key2='ble', key3='bli')
+                print "#C7.25 - Formatting Method", template.format(key1='bla', key2='ble', key3='bli')
                 template = '{}, {} and {}'
-                print "#27 - Formatting Method", template.format('spam', 'ham', 'eggs')
+                print "#C7.26 - Formatting Method", template.format('spam', 'ham', 'eggs')
                 template = '%s, %s and %s'
-                print "#28 - Formatting Method", template % ('spam', 'ham', 'eggs')
+                print "#C7.27 - Formatting Method", template % ('spam', 'ham', 'eggs')
+                # ------------- page 276/1594 ---------------
+                import sys
+                print '#C7.28 My {1[kind]} runs {0.platform}'.format(sys, {'kind': 'laptop'})
+                print '#C7.29 My {map[kind]} runs {sys.platform}'.format(sys=sys, map={'kind': 'laptop'})
+                somelist = list('SPAM')
+                print '#C7.30: ', somelist
+                print '#C7.31 first={0[0]}, third={0[2]}'.format(somelist)
+            def Chapter_8():
+                MyList = []
+                MyList = ['abc', 'def', 'ghi', ['jkl', 'mno', 'pqr']]
+                print '#C8.1 MyList: ', MyList[0][2], MyList[3][0][1]
+                print '#C8.2 Mylist * 2', MyList * 2
+                MyList.append('stu')
+                print '#C8.3 MyList.append: ', MyList
+                MyList.extend(['vxy'])
+                print '#C8.4 MyList.extend: ', MyList
+                MyList.insert(0, 'wz')
+                print '#C8.5 MyList.insert: ', MyList
+                print '#C8.6 MyList.pop: ', MyList.pop(1)
+                
+                #for x in [1, 2, 3]: print '#C8.7 x', x, end=' '
+                rep = [ x * 4 for x in 'SPAM']; print '#C8.8 rep: ', rep
+                matrix = [[1,2,3],
+                [4,5,6],
+                [7,8,9]]
+                print '#C8.9 Matrix: ', matrix
+                print '#C8.10 Matrix [2,2]', matrix[2][2]
+
+                matrix[0][0] = 'a'
+                print '#C8.11 matrix[0][0] = a: ', matrix
+            def Chapter_9():
+
             #Chapter_4()
             #Chapter_5()
             #Chapter_6()
-            Chapter_7()
+            #Chapter_7()
+            #Chapter_8()
+            Chapter_9() #Page 328/1594
 
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
