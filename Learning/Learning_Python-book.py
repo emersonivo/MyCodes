@@ -1,4 +1,6 @@
 import re
+import os
+homedir = os.getcwd()
 class Book:
     class _blank:
         class Part_II:
@@ -118,7 +120,40 @@ class Book:
                 matrix[0][0] = 'a'
                 print '#C8.11 matrix[0][0] = a: ', matrix
             def Chapter_9():
-
+                def Tuples():
+                    MyTuple = ('a', 'b', 'c')
+                    print '#C9.1 MyTuple[0]', MyTuple[0]
+                    MyTuple = ('abc', 'def', 'ghi')
+                    print '#C9.2 MyTuple[1][0]', MyTuple[1][0]
+                    MyTuple = tuple('SPAM')
+                    print '#C9.3 MyTuple', MyTuple
+                    print '#C9.4 len(MyTuple)', len(MyTuple)
+                    print '#C9.5 MyTuple * 3', MyTuple * 3
+                    t1 = ('c9')
+                    t2 = 'c9'
+                    t3 = ('c9',)
+                    t4 = 'c9',
+                    print '#C9.6 Types Tuples: ', type(t1), type(t2), type(t3), type(t4)
+                    L = list(MyTuple)
+                    print '#C9.7 List of Tuple: ', L
+                    L[0] = 'R'
+                    print '#C9.8 Replace list item', L
+                    T = tuple(L)
+                    print '#C9.9 Tuple of list: ', T
+                    print '#C9.10 Sorting tuple:', sorted(T)
+                def Files():
+                    input = open(homedir+'/Learning/file_c9.txt')
+                    # aString = input.read()
+                    # print '#C9.11 - Read file into a string', aString
+                    # aString = input.readline()
+                    # print '#C9.12 - Read file into a string', aString
+                    aList = input.readlines()
+                    print '#C9.13 - Read file into a list', aList
+                    with open(homedir+"/Learning/file2_c9.txt", 'w+') as output:
+                        for x in range(1, 5):
+                            output.writelines('Line'+str(x)+'\n')
+                #Tuples
+                Files()
             #Chapter_4()
             #Chapter_5()
             #Chapter_6()
