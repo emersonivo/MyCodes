@@ -33,69 +33,69 @@ class Book:
                 _Math()
             def Chapter_6():
                 def Vars1():
-                    a = 3
-                    b = a
-                    print "#C6.1 a", a, "b", b
-                    a = 5
-                    print "#C6.2 a", a, "b", b
+                    # a = 3
+                    # b = a
+                    # print ("#C6.1 a", a, "b", b)
+                    # a = 5
+                    # print ("#C6.2 a", a, "b", b)
                 def Vars2():
                     L1 = [2, 4, 6]
                     L2 = L1
-                    print "#C6.3 L1: ", L1, "| L2: ", L2
+                    print ("#C6.3 L1: ", L1, "| L2: ", L2)
                     L1[0] = 24
-                    print "#C6.4 L1: ", L1, "| L2: ", L2
+                    print ("#C6.4 L1: ", L1, "| L2: ", L2)
                 Vars1()
                 Vars2()
             def Chapter_7():
                 #Page 243/1594
                 MyString = "Salve o Tricolor Paulista, Amado Time Brasileiro"
                 R = MyString.rstrip()
-                print "#C7.1 - Find:", MyString.find("Tricolor")
-                print "           ", MyString
-                print "#C7.2 - rstrip", R, "Didn't work"
-                print "#C7.3 - replace: ", MyString.replace('Time', 'Clube')
-                print "#C7.4 - split: ", MyString.split(',')
-                print "#C7.5 - lower: ", MyString.lower()
-                print "#C7.6 - endeith: ", MyString.endswith(" VAMOS SAO PAULO")
-                print "#C7.7 - join: ", ','.join('string1 string2')
-                print "#C7.8 - encode:", MyString.encode('latin-1')
+                print ("#C7.1 - Find:", MyString.find("Tricolor")
+                print ("           ", MyString)
+                print ("#C7.2 - rstrip", R, "Didn't work")
+                print ("#C7.3 - replace: ", MyString.replace('Time', 'Clube')
+                print ("#C7.4 - split: ", MyString.split(',')
+                print ("#C7.5 - lower: ", MyString.lower()
+                print ("#C7.6 - endeith: ", MyString.endswith(" VAMOS SAO PAULO")
+                print ("#C7.7 - join: ", ','.join('string1 string2')
+                print ("#C7.8 - encode:", MyString.encode('latin-1')
                 MyShort = "Salve o Tricolor"
-                for x in MyShort: print "#9 - iteration: ", x
-                print "#C7.9 - iteration: ", 'Tricolor' in MyString
-                print "#C7.10 - map; ", map(ord, MyShort)
-                print "#C7.11 - match: ", re.match('Tri(.*)or', MyShort) #Do not Work
-                print "#C7.12 - match: ", re.match('Tri(.*)or', MyShort) #Do not work
+                for x in MyShort: print ("#9 - iteration: ", x
+                print ("#C7.9 - iteration: ", 'Tricolor' in MyString)
+                print ("#C7.10 - map; ", map(ord, MyShort)
+                print ("#C7.11 - match: ", re.match('Tri(.*)or', MyShort) #Do not Work
+                print ("#C7.12 - match: ", re.match('Tri(.*)or', MyShort) #Do not work
                 MyLong = """
                 This is the first line
                 And this is the second"""
-                print "#C7.13 - MyLong", MyLong
+                print ("#C7.13 - MyLong", MyLong)
                 print("#C7.14", "-" * 15)
                 #for c in MyShort: print("#C7.15 :", c, end='') Do not work
-                print "#C7.16 - Slicing :", MyShort[1:16:2]
-                print "#C7.17 - Slicing :", MyShort[::2]
-                print "#C7.18 - Slicing :", MyShort[::-1]
-                print "#C7.19 - Changing string: %d %s" % (25, 'March')
-                print "#C7.20 - Look at page {0}/{1} for {2} references".format(262, 1594, 'Method of Strings')
-                print "#C7.21 - Method lower", MyShort.lower()
-                print "#C7.22 - split", MyShort.split()
+                print ("#C7.16 - Slicing :", MyShort[1:16:2])
+                print ("#C7.17 - Slicing :", MyShort[::2])
+                print ("#C7.18 - Slicing :", MyShort[::-1])
+                print ("#C7.19 - Changing string: %d %s" % (25, 'March'))
+                print ("#C7.20 - Look at page {0}/{1} for {2} references".format(262, 1594, 'Method of Strings'))
+                print ("#C7.21 - Method lower", MyShort.lower())
+                print ("#C7.22 - split", MyShort.split())
                 x = 10
-                print "#C7.23 - Advanced Formatting - Page 271/1594 #a:%d, #b:%-6d, #c:%06d." % (x, x, x) 
+                print ("#C7.23 - Advanced Formatting - Page 271/1594 #a:%d, #b:%-6d, #c:%06d." % (x, x, x))
 
                 template = '{0}, {1} and {2}'
-                print "#C7.24 - Formatting Method", template.format('spam', 'ham', 'eggs')
+                print ("#C7.24 - Formatting Method", template.format('spam', 'ham', 'eggs'))
                 template = '{key1}, {key2} and {key3}'
-                print "#C7.25 - Formatting Method", template.format(key1='bla', key2='ble', key3='bli')
+                print ("#C7.25 - Formatting Method", template.format(key1='bla', key2='ble', key3='bli'))
                 template = '{}, {} and {}'
-                print "#C7.26 - Formatting Method", template.format('spam', 'ham', 'eggs')
+                print ("#C7.26 - Formatting Method", template.format('spam', 'ham', 'eggs'))
                 template = '%s, %s and %s'
-                print "#C7.27 - Formatting Method", template % ('spam', 'ham', 'eggs')
+                print ("#C7.27 - Formatting Method", template % ('spam', 'ham', 'eggs'))
                 # ------------- page 276/1594 ---------------
                 import sys
-                print '#C7.28 My {1[kind]} runs {0.platform}'.format(sys, {'kind': 'laptop'})
-                print '#C7.29 My {map[kind]} runs {sys.platform}'.format(sys=sys, map={'kind': 'laptop'})
+                print ('#C7.28 My {1[kind]} runs {0.platform}'.format(sys, {'kind': 'laptop'}))
+                print ('#C7.29 My {map[kind]} runs {sys.platform}'.format(sys=sys, map={'kind': 'laptop'}))
                 somelist = list('SPAM')
-                print '#C7.30: ', somelist
-                print '#C7.31 first={0[0]}, third={0[2]}'.format(somelist)
+                print ('#C7.30: ', somelist)
+                print ('#C7.31 first={0[0]}, third={0[2]}'.format(somelist))
             def Chapter_8():
                 MyList = []
                 MyList = ['abc', 'def', 'ghi', ['jkl', 'mno', 'pqr']]
@@ -153,11 +153,11 @@ class Book:
                     #     for x in range(1, 5):
                     #         output.writelines('Line'+str(x)+'\n')
                     # MyString = 'abcd   '
-                    # print "C9.14: ", len(MyString), MyString
-                    # print "C9.15: ", len(MyString.rsplit()), MyString.rsplit()
+                    # print ("C9.14: ", len(MyString), MyString
+                    # print ("C9.15: ", len(MyString.rsplit()), MyString.rsplit()
                     # MyString = '    abcd'
-                    # print "C9.16: ", len(MyString), MyString
-                    # print "C9.17: ", len(MyString.rsplit()), MyString.rsplit()
+                    # print ("C9.16: ", len(MyString), MyString
+                    # print ("C9.17: ", len(MyString.rsplit()), MyString.rsplit()
                     #------------------------
                     # MyDict = {'abobora': 'legumes', 'banana': 'fruta', 'cascalho': 'rocha'}
                     # F = open(homedir+'/Learning/filedict_c9.dump', 'wb')
@@ -174,7 +174,7 @@ class Book:
                     # vars2 = dict(a2=2, b2=2, c2=2)
                     # vars3 = dict(a3=3, b3=3, c3=3)
                     # MyDict = dict(L1=vars1, L2=vars2, L3=vars3)
-                    # print "#C9.20 MyDict: ", MyDict
+                    # print ("#C9.20 MyDict: ", MyDict
                     # import json
                     # F3 = open(homedir+'/Learning/filedict_c9.json', 'wb')
                     # json.dump(MyDict, F3, indent=4)
@@ -194,20 +194,20 @@ class Book:
             #Chapter_9() #Page 328/1594
         class Part_III:
             def Chapter_10():
-                x = 0
-                y = 1
-                w = 3
-                if (x < y and
-                    y < w and
-                    w > x):
-                    print ("#C10.1 \
-                    \nif (x < y and \
-                        \n\ty < w and \
-                        \n\tw < x):")
+                # x = 0
+                # y = 1
+                # w = 3
+                # if (x < y and
+                #     y < w and
+                #     w > x):
+                #     print ("#C10.1 \
+                #     \nif (x < y and \
+                #         \n\ty < w and \
+                #         \n\tw < x):")
 
                 while True:
-                    reply = input("#C10.2 - Enter text:")
-                    if reply == 'stop': break
+                    _reply = input("#C10.2 - Enter text: ")
+                    if _reply == 'stop': break
                     print(reply.upper())
             Chapter_10()
     class _Worker: #page 181/1594
