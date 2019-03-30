@@ -1,3 +1,4 @@
+#!/usr/bin/python3.6
 import re
 import os
 homedir = os.getcwd()
@@ -222,7 +223,35 @@ class Book:
                         print(num ** 2)
                 print("Bye")
             def Chapter_11():
+                seq = [1, 2, 3, 4]
+                a, b, c, d = seq
+                print("#C11.1 ", a, b, d)
+                # a, b = seq Expected fail
+                a, *b = seq
+                print("#C11.2 ", a, b)
+                a, *b, c = seq
+                print("#C11.3 ", a, b, c)
+                for (a, b, c) in [(1, 2, 3),('a', 'b','c'),(7, 8, 9)]:
+                    print("#C11.4 a="+str(a), " b="+str(b), " c="+str(c))
+                a = b = []
+                b.append(42)
+                print("C#11.5 ", a, b)
 
+                x = 1
+                x += 3
+                print("#C11.6 ", x)
+                L = [1, 2]
+                L = L + [3]
+                print("#C11.7 Adding element to a list L = L + [3]:", L)
+                L.append(4)
+                print("#C11.8 Adding element to a list L.append(4):", L)
+                L.extend([5, 6])
+                print("#C11.9 Adding element to a list L.extend([5, 6]):", L)
+                L += [8, 9, 10]
+                print("#C11.9 Adding element to a list L += [8, 9, 10]:", L)
+                seq = [1, 2, 3, 4]
+                a, b, c, d = seq
+                print("#C11.10 Printing direct to file: ", a, b, d, sep='@', end='END\n', file=open(homedir+'/Learning/page413_1594', 'a+'))
             #Chapter_10()
             Chapter_11() #Page 391/1594
     class _Worker: #page 181/1594
