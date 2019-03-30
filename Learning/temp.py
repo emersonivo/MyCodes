@@ -25,3 +25,6 @@ import datetime
 now = datetime.datetime.now()
 timex = now.strftime('%Y%m%d%H%M%S')
 print(timex)
+
+MyDict = dict()
+MyDict.update()
