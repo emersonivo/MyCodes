@@ -1,6 +1,7 @@
 #!/usr/bin/python3.6
 import re
 import os
+import sys
 homedir = os.getcwd()
 class Book:
     class _blank:
@@ -251,9 +252,48 @@ class Book:
                 print("#C11.9 Adding element to a list L += [8, 9, 10]:", L)
                 seq = [1, 2, 3, 4]
                 a, b, c, d = seq
-                print("#C11.10 Printing direct to file: ", a, b, d, sep='@', end='END\n', file=open(homedir+'/Learning/page413_1594', 'a+'))
-            #Chapter_10()
-            Chapter_11() #Page 391/1594
+                
+                print("#C11.10 Printing direct to file: ", a, b, d, sep='@', end='END\n', file=open(homedir+'/page413_1594', 'w+'))
+                
+                print("#C11.11 Using print to read from file:", open(homedir+'/page413_1594').read())
+            def Chapter_12():
+                # branch = {'spam': 1.25, 'ham': 1.99, 'eggs': 0.99}
+                # print('#C12.1 ', branch.get('spam', 'Bad choice'))
+                # print(branch)
+                # opt = input("Make your choice: ")
+                # print('#C12.2 ', branch.get(opt, 'Bad choice'))
+                Y = 3; Z = 9
+                X = input("Enter X value: ")
+                A = Y if X else Z
+                print("#C12.3 Page 435/1594: ", A)
+            def Chapter_13():
+                opt = 10
+                while True:
+                    print("C13.1 Block of three whiles to test 'break', 'continue' and 'loop'")
+                    while True:
+                        print("Second while")
+                        if int(opt) == 9: break
+                        while True:
+                            print("Third while")
+                            opt = input("Enter 9 to exit: ")
+                            if int(opt) == 9:
+                                return opt
+                                continue
+                            elif int(opt) < 4:
+                                print('break')
+                                break
+                            elif int(opt) > 3 and int(opt) < 6:
+                                print('continue')
+                                continue
+                            else:
+                                print("else - We continue here in the third loop")
+                    if int(opt) == 9: 
+                        print("opt = 9")
+                        break
+            # Chapter_10()
+            # Chapter_11()
+            # Chapter_12()
+            Chapter_13()
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
