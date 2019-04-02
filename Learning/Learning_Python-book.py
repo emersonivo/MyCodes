@@ -272,28 +272,61 @@ class Book:
                     print("C13.1 Block of three whiles to test 'break', 'continue' and 'loop'")
                     while True:
                         print("Second while")
-                        if int(opt) == 9: break
                         while True:
                             print("Third while")
                             opt = input("Enter 9 to exit: ")
                             if int(opt) == 9:
-                                return opt
-                                continue
+                                print("while #3 - opt == 9 - break")
+                                break
                             elif int(opt) < 4:
-                                print('break')
+                                print("while #3 - opt < 4 - break")
                                 break
                             elif int(opt) > 3 and int(opt) < 6:
                                 print('continue')
                                 continue
                             else:
                                 print("else - We continue here in the third loop")
+                        if int(opt) == 9: 
+                            print("while #2 - opt == 9 - break")
+                            break
+                        else:
+                            print("while #2 - opt != 9 - continue")
+                            #continue
                     if int(opt) == 9: 
-                        print("opt = 9")
+                        print("while #1 - opt == 9 - break")
                         break
+            def Chapter_14():
+                L = [1, 4, 7]
+                I = iter(L)
+                while True:
+                    try:
+                        x = next(I)
+                    except StopIteration:
+                        break
+                    print('#C14.1', x ** 2, end='%\n')
+                for I in L:
+                    print('#C14.2', I ** 2, end='@\n')
+
+                P = os.popen('dir')
+                for I in P:
+                    print('#C14.3', I, end=';')
+                
+                L = [ x + 10 for x in L]
+                print('#C14.4', L)
+
+                L = [ x + 10 for x in L if x > 13]
+                print('#C14.5', L)
+
+                L = [ x + y for x in 'abc' for y in 'xyz' ]
+                print('#C14.6', L)
+
+                D = {x: y for x, y in enumerate('abcdefg')}
+                print('#C14.7', D)
             # Chapter_10()
             # Chapter_11()
             # Chapter_12()
-            Chapter_13()
+            # Chapter_13()
+            Chapter_14()
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
