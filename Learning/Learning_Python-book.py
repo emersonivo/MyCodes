@@ -309,19 +309,22 @@ class Book:
 
                 P = os.popen('dir')
                 for I in P:
-                    print('#C14.3', I, end=';')
+                    print('#C14.3', I, end=';\n')
                 
                 L = [ x + 10 for x in L]
-                print('#C14.4', L)
+                print('#C14.4 - L = [ x + 10 for x in L]\n', L,'\n')
 
                 L = [ x + 10 for x in L if x > 13]
-                print('#C14.5', L)
+                print('#C14.5 - L = [ x + 10 for x in L if x > 13]\n', L,'\n')
 
                 L = [ x + y for x in 'abc' for y in 'xyz' ]
-                print('#C14.6', L)
+                print("#C14.6 L = [ x + y for x in 'abc' for y in 'xyz' ]\n", L,'\n')
+
+                L2 = list(zip('abc', 'xyz'))
+                print("#C14.7 L2 = list(zip('abc', 'xyz'))\n", L2,'\n')
 
                 D = {x: y for x, y in enumerate('abcdefg')}
-                print('#C14.7', D)
+                print("#C14.8 - D = {x: y for x, y in enumerate('abcdefg')}\n", D,'\n')
             # Chapter_10()
             # Chapter_11()
             # Chapter_12()
