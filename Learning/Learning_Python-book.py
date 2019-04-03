@@ -325,11 +325,37 @@ class Book:
 
                 D = {x: y for x, y in enumerate('abcdefg')}
                 print("#C14.8 - D = {x: y for x, y in enumerate('abcdefg')}\n", D,'\n')
+
+                D = {'a': 1, 'b': '', 'c': 3}
+                print("#C14.9 - D = ", D)
+                print("#C14.10 any(D)", any(D))
+                print("#C14.11 all(D)", all(D),'\n')
+
+                L = ['a', 'b', '', 'd']
+                print("#C14.12 - L = ", L)
+                print("#C14.13 any(L)", any(L))
+                print("#C14.14 all(L)", all(L),'\n')
+
+                LR = list(range(10))
+                print("#C14.15 LR = list(range(10)) ", LR, '\n')
+
+                D = {'a': 1, 'b': 2, 'c': 3}
+                k = D.keys()
+                print("#C14.16 - k = D.keys()", k)
+                print("#C14.17 - list(k))",list(k)) 
+
+                v = D.values()
+                print("#C14.18 - v = D.values()", v)
+                print("#C14.19 - list(v))",list(v)) 
+                print("#C14.20 - list(D.items())",list(D.items()))
+            def Chapter_15():
+                
             # Chapter_10()
             # Chapter_11()
             # Chapter_12()
             # Chapter_13()
-            Chapter_14()
+            # Chapter_14()
+            Chapter_15()
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
