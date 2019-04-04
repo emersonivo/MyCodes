@@ -363,11 +363,56 @@ class Book:
                         print(y)
                         return x ** y
                     return action(x)
-                f = maker(3)
-                print(f)
+                #f = maker(3)
+                #print(f)
+            def Chapter_17():
+                x = 99
+                def f2():
+                    print(x)
+                #f2()
+                
+                def tester(start):
+                    global state
+                    state = start
+                    def nested(label):
+                        #nonlocal state
+                        global state
+                        print("#C17.1 - nonlocal statement ", label, state)
+                        state += 1
+                    return nested
 
-            Chapter_16()
+                F = tester(0)
+                for x in ['spam', 'eggs', 'ham']:
+                    F(x)
 
+                class tester2:
+                    def __init__(self, start):
+                        self.state = start
+                    def nested(self, label):
+                        print("C#17.2 simple class: ", label, self.state)
+                        self.state += 1
+                
+                F = tester2(0)
+                for x in ['boll', 'car', 'house']:
+                    F.nested(x)
+
+                class tester3:
+                    def __init__(self, start):
+                        self.state = start
+                    def __call__(self, label):
+                        print("C#17.3 called class: ", label, self.state)
+                        self.state += 1
+                    def nested(self, label):
+                        print("C#17.4 nested + called class: ", label, self.state)
+                        self.state += 3
+
+                F = tester3(0)
+                for x in ['cat', 'dog', 'horse']:
+                    F(x)
+                    F.nested(x)
+
+            #Chapter_16()
+            Chapter_17()
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
