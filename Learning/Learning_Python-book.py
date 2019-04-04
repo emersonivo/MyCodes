@@ -348,14 +348,26 @@ class Book:
                 print("#C14.18 - v = D.values()", v)
                 print("#C14.19 - list(v))",list(v)) 
                 print("#C14.20 - list(D.items())",list(D.items()))
-            def Chapter_15():
-                
+            
             # Chapter_10()
             # Chapter_11()
             # Chapter_12()
             # Chapter_13()
             # Chapter_14()
-            Chapter_15()
+
+        class Part_IV:
+            def Chapter_16():
+                def maker(x):
+                    print(x)
+                    def action(y):
+                        print(y)
+                        return x ** y
+                    return action(x)
+                f = maker(3)
+                print(f)
+
+            Chapter_16()
+
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
@@ -371,6 +383,7 @@ class Book:
         #emp2.giveRaise(.10)
         #print(emp2.pay)
 
-#Book._blank.Part_II
-Book._blank.Part_III
-#Book._Worker
+# Book._blank.Part_II
+# Book._blank.Part_III
+Book._blank.Part_IV
+# Book._Worker
