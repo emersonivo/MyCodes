@@ -354,7 +354,6 @@ class Book:
             # Chapter_12()
             # Chapter_13()
             # Chapter_14()
-
         class Part_IV:
             def Chapter_16():
                 def maker(x):
@@ -410,9 +409,30 @@ class Book:
                 for x in ['cat', 'dog', 'horse']:
                     F(x)
                     F.nested(x)
+            
+            def Chapter_18():
+                def changer(a, b):
+                    a = 2
+                    b[0] = 'spam'
+                    return a, b
+                
+                X = 1
+                L = [1, 2]
+                #print("#C18.1 ", changer(X, L))
 
-            #Chapter_16()
-            Chapter_17()
+                def multiplex(x, y):
+                    x = 2
+                    y = [3, 4]
+                    return x, y
+                
+                X = 1
+                L = [1, 2]
+                X, L = multiplex(X, L)
+                print("#C18.2 ", X, L)
+
+            # Chapter_16()
+            # Chapter_17()
+            Chapter_18()
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
