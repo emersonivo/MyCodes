@@ -409,7 +409,6 @@ class Book:
                 for x in ['cat', 'dog', 'horse']:
                     F(x)
                     F.nested(x)
-            
             def Chapter_18():
                 def changer(a, b):
                     a = 2
@@ -429,10 +428,63 @@ class Book:
                 L = [1, 2]
                 X, L = multiplex(X, L)
                 print("#C18.2 ", X, L)
+            def Chapter_19():
+                def mysum(L):
+                    if not L:
+                        return 0
+                    else:
+                        return L[0] + mysum(L[1:])
+                print("#C19.1 page 608/1594 - sum 1 ", mysum([1, 2, 3, 4, 5]))
+                def mysum2(L):
+                    return 0 if not L else L[0] + mysum2(L[1:])
+                print("#C19.2 page 608/1594 - sum 2 ", mysum2([1, 2, 3, 4, 5]))
+                def mysum3():
+                    L = [1, 2, 3, 4, 5]
+                    sum = 0
+                    while L:
+                        sum += L[0]
+                        L = L[1:]
+                    return sum
+                print("#C19.3 page 610/1594 - sum 3 ", mysum3())
+                def mysum4():
+                    L = [1, 2, 3, 4, 5]
+                    sum = 0
+                    for x in L: sum +=x
+                    return sum                    
+                print("#C19.4 page 610/1594 - sum 4 ", mysum4())
+                def mysum5():
+                    def sumtree(L):
+                        tot = 0
+                        for x in L:
+                            #print("#1", x)
+                            if not isinstance(x, list):
+                                tot += x
+                            else:
+                                tot += sumtree(x)
+                        return tot
+                    L = [1, [2, [3, 4], 5], 6, [7, 8]]
+                    return sumtree(L)
+                print("19.5 - page 610/1594 ", mysum5())
+                def mysum6():
+                    def sumtree2(L):
+                        tot = 0
+                        items = list(L)
+                        while items:
+                            front = items.pop(0)
+                            #print("#2 ", front)
+                            if not isinstance(front, list):
+                                tot += front
+                            else:
+                                items.extend(front)
+                        return tot
+                    L = [1, [2, [3, 4], 5], 6, [7, 8]]
+                    return sumtree2(L)
+                print("19.6 - page 611/1594 ", mysum6())                    
 
             # Chapter_16()
             # Chapter_17()
-            Chapter_18() #595/1594
+            # Chapter_18()
+            Chapter_19()
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
