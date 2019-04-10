@@ -489,18 +489,57 @@ class Book:
                 def func1(x, y, z): return x + y + z
                 print("#C19.9 - page 620/1594 func def", func1(1, 2, 3))
                 func2 = lambda x, y, z: x + y + z
-                print("#C19.10 - page 623/1594 (lambda x, y, z: x + y + z) ", func2(1, 2, 3))
+                print("#C19.10 - page 623/1594 (lambda x, y, z: x + y + z) ")
+                print(func2(1, 2, 3))
                 lower = (lambda x, y: x if x < y else y)
-                print("#C19.11 - page 623/1594 (lambda x, y: x if x < y else y) ", lower('aa', 'ab'))
+                print("#C19.11 - page 623/1594 (lambda x, y: x if x < y else y) ")
+                print(lower('aa', 'ab'))
                 counters = [1, 2, 3, 4]
                 def inc(x): return x + 10
                 print("couters", counters)
-                print("#C19.12 - page 626/1594 (list(map(inc, counters)) ", list(map(inc, counters)))
-                print("#C19.13 - page 627/1594 (list(map((lambda x: x + 3), counters)) ", list(map((lambda x: x + 3), counters)))
+                print("#C19.12 - page 626/1594 (list(map(inc, counters))")
+                print(list(map(inc, counters)))
+                print("#C19.13 - page 627/1594 (list(map((lambda x: x + 3), counters))")
+                print(list(map((lambda x: x + 3), counters)))
+                print("#C19.14 - page 628/1594 (list(filter((lambda x: x >0), range(-5, 5)))")
+                print(list(filter((lambda x: x >0), range(-5, 5))))
+                print("#C19.15 - page 628/1594 ([x for x in range(-5, 5) if x > 0]")
+                print([x for x in range(-5, 5) if x > 0])
+                from functools import reduce
+                print("#C19.16 - page 629/1594 reduce((lambda x, y: x + y), [1, 2, 3, 4])")
+                print(reduce((lambda x, y: x + y), [1, 2, 3, 4]))
+                import operator, functools
+                print("#C19.17 - Page 629/1594 - functools.reduce(operator.add, [2, 4, 6]")
+                print(functools.reduce(operator.add, [2, 4, 6]))
+            def Chapter_20():
+                print("C20.1 Page 634/1594 \nres = []\nfor x in 'spam' :\n\tres.append(ord(x))\n")
+                print("C20.2 Page 634/1594 \nres = list(map(ord, 'spam'))")
+                res = list(map(ord, 'spam'))
+                print(res)     
+                print("#C20.3 Page 634/1594 res = [ord(x) for x in 'hamburger']")
+                res = [ord(x) for x in 'humburger']
+                print(res)
+                print("#C20.3 Page 635/1594 '[x for x in range(15) if x % 3 == 2]")
+                print([x for x in range(15) if x % 3 == 2])
+                print('Formal comprehension syntax\n[expression for target in itarable] OR\n \
+                    [expression for target1 in iterable1 if condition1\n\
+                                for target2 in iterable2 if condition2\n\
+                                for targetN in iterableN if conditionN]')
+                res = [x + y for x in [0, 1, 2] for y in [100, 200, 300]]
+                print("#C20.4 Page 636/1594 res = [x + y for x in [0, 1, 2] for y in [100, 200, 300]]")
+                print(res)
+                res = [x + y + z for x in range(10) if x % 2 == 0
+                                 for y in range(20) if y % 3 == 1
+                                 for z in range(30) if z % 5 == 3]
+                print("C20.5 Page 636/1594 res = [x + y + z for x in range(10) if x % 2 == 0\n \
+                                 for y in range(20) if y % 3 == 1\n \
+                                 for z in range(30) if z % 5 == 3]")
+                print(res)
             # Chapter_16()
             # Chapter_17()
             # Chapter_18()
-            Chapter_19() #Page 628/1594
+            # Chapter_19()
+            Chapter_20() #636/1594
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
@@ -509,7 +548,6 @@ class Book:
             return self.name.split()[-1]
         def giveRaise(self, percent):
             self.pay *= (1.0 + percent)
-
         #emp1 = _Worker('Dunha Silva', 10000)
         #emp2 = _Worker('Ze Ruela', 24000)
         #print(emp1.lastName())
