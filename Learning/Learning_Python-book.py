@@ -464,7 +464,7 @@ class Book:
                         return tot
                     L = [1, [2, [3, 4], 5], 6, [7, 8]]
                     return sumtree(L)
-                print("19.5 - page 610/1594 ", mysum5())
+                print("#C19.5 - page 610/1594 ", mysum5())
                 def mysum6():
                     def sumtree2(L):
                         tot = 0
@@ -479,12 +479,28 @@ class Book:
                         return tot
                     L = [1, [2, [3, 4], 5], 6, [7, 8]]
                     return sumtree2(L)
-                print("19.6 - page 611/1594 ", mysum6())                    
-
+                print("#C19.6 - page 611/1594 ", mysum6())                    
+                def mysum7(a: 'spam', b: (1, 10), c: float) -> int:
+                    return a + b + c
+                print("#C19.7 - page 618/1594 ", mysum7(1, 2, 3))
+                print("#C19.8 - page 618/1594 ", mysum7.__annotations__)
+                for arg in mysum7.__annotations__:
+                    print(arg, '=>', mysum7.__annotations__[arg])
+                def func1(x, y, z): return x + y + z
+                print("#C19.9 - page 620/1594 func def", func1(1, 2, 3))
+                func2 = lambda x, y, z: x + y + z
+                print("#C19.10 - page 623/1594 (lambda x, y, z: x + y + z) ", func2(1, 2, 3))
+                lower = (lambda x, y: x if x < y else y)
+                print("#C19.11 - page 623/1594 (lambda x, y: x if x < y else y) ", lower('aa', 'ab'))
+                counters = [1, 2, 3, 4]
+                def inc(x): return x + 10
+                print("couters", counters)
+                print("#C19.12 - page 626/1594 (list(map(inc, counters)) ", list(map(inc, counters)))
+                print("#C19.13 - page 627/1594 (list(map((lambda x: x + 3), counters)) ", list(map((lambda x: x + 3), counters)))
             # Chapter_16()
             # Chapter_17()
             # Chapter_18()
-            Chapter_19()
+            Chapter_19() #Page 628/1594
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
