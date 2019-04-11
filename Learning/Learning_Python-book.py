@@ -526,20 +526,34 @@ class Book:
                                 for target2 in iterable2 if condition2\n\
                                 for targetN in iterableN if conditionN]')
                 res = [x + y for x in [0, 1, 2] for y in [100, 200, 300]]
-                print("#C20.4 Page 636/1594 res = [x + y for x in [0, 1, 2] for y in [100, 200, 300]]")
+                print("\n#C20.4 Page 636/1594 res = [x + y for x in [0, 1, 2] for y in [100, 200, 300]]")
                 print(res)
-                res = [x + y + z for x in range(10) if x % 2 == 0
-                                 for y in range(20) if y % 3 == 1
-                                 for z in range(30) if z % 5 == 3]
-                print("C20.5 Page 636/1594 res = [x + y + z for x in range(10) if x % 2 == 0\n \
-                                 for y in range(20) if y % 3 == 1\n \
-                                 for z in range(30) if z % 5 == 3]")
+                res = [(x, y, z) for x in range(10) if x % 2 == 0
+                                 for y in range(10) if y % 3 == 1
+                                 for z in range(10) if z % 5 == 3]
+                print("\n#C20.5 Page 636/1594 res = [(x, y, z) for x in range(10) if x % 2 == 0\n \
+                                 for y in range(10) if y % 3 == 1\n \
+                                 for z in range(10) if z % 5 == 3]")
                 print(res)
+                print("\n#C20.6 Page 642/1594 L = [line.rstrip() for line in open('/data/git/MyCodes/Learning/file2_c9.txt')]")
+                L = [line.rstrip() for line in open('/data/git/MyCodes/Learning/file2_c9.txt')]
+                print(L)
+                listoftuple = [('bob', 35, 'mgr'), ('sue', 40, 'dev')]
+                print("\n#C20.7 Page 642/1594 A = [age for (name, age, job)in listoftuple]")
+                A = [age for (name, age, job)in listoftuple]
+                print(A)
+                def gensquares(N):
+                    for i in range(N):
+                        yield i ** 2
+                
+                for i in gensquares(5):
+                    print(i, end=' : ')
+                
             # Chapter_16()
             # Chapter_17()
             # Chapter_18()
             # Chapter_19()
-            Chapter_20() #636/1594
+            Chapter_20() #648/1594
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
