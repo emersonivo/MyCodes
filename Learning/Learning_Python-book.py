@@ -548,12 +548,35 @@ class Book:
                 
                 for i in gensquares(5):
                     print(i, end=' : ')
+                print("\n\n#C20.8 Same result:")
+                print("#20.8.1 [x ** 2 for x in range(4)]", [x ** 2 for x in range(4)])
+                #X =  [x ** 2 for x in range(4)]
+                L = list(x ** 2 for x in range(4))
+                print("#C20.8.2 L = list(x ** 2 for x in range(4))", L)
+                Line = "aaa bbb\nccc ddd\reee fff"
+                print(Line)
+                xLine = ''.join(x for x in Line.split() if len(x) > 1)
+                print("#C20.9 ''.join(x for x in Line.split() if len(x) > 1)")
+                print(xLine)
+                def timesfour1(S): #Page 655/1594
+                    for c in S:
+                        yield c * 4
+                G = timesfour1('spam')
+                F = timesfour1('spam')
+                print("#C20.10.1 As list" , list(G))
+                print("#C20.10.2 As tuple", tuple(F))
+                import os
+                print("#C20.11 ... \nfor (root, subs, files) in os.walk('.'):\n\tfor name in files:\n\t\tif name.startswith('blibli'):\n\t\t\tprint(root, name)")
+                for (root, subs, files) in os.walk('.'):
+                    for name in files:
+                        if name.startswith('blibli'):
+                            print(root, name)
                 
             # Chapter_16()
             # Chapter_17()
             # Chapter_18()
             # Chapter_19()
-            Chapter_20() #648/1594
+            Chapter_20() #653/1594
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
