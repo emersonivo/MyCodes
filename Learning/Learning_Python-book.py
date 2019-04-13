@@ -566,7 +566,7 @@ class Book:
                 print("#C20.10.1 As list" , list(G))
                 print("#C20.10.2 As tuple", tuple(F))
                 import os
-                print("#C20.11 ... \nfor (root, subs, files) in os.walk('.'):\n\tfor name in files:\n\t\tif name.startswith('blibli'):\n\t\t\tprint(root, name)")
+                print("#C20.11 *** VERY GOOD *** ... \nfor (root, subs, files) in os.walk('.'):\n\tfor name in files:\n\t\tif name.startswith('blibli'):\n\t\t\tprint(root, name)")
                 for (root, subs, files) in os.walk('.'):
                     for name in files:
                         if name.startswith('blibli'):
