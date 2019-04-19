@@ -1,7 +1,7 @@
 #!/usr/bin/python3.6
 import re
 import os
-import sys
+#import sys
 homedir = os.getcwd()
 class Book:
     class _blank:
@@ -571,12 +571,41 @@ class Book:
                     for name in files:
                         if name.startswith('blibli'):
                             print(root, name)
+
+            def Chapter_21():
+                print("#C21.1 Nothing to show in this chapter")
                 
             # Chapter_16()
             # Chapter_17()
             # Chapter_18()
             # Chapter_19()
-            Chapter_20() #653/1594
+            # Chapter_20()
+            # Chapter_21()
+        class Part_V:
+            def Chapter_22():
+                def setpath(Text):
+                    import site
+                    import sys
+                    site.addsitedir('/data/temp/')
+                    from outmodule import myprint
+                    p = myprint()
+                    p.pp(Text)
+                    print(sys.path)
+                setpath("#C22.1 Sera?")
+            def Chapter_23():
+                print("#C23.1 - Nothing to show")
+            def Chapter_24():
+                print("#C24.1 - Nothing to show")
+            def Chapter_24():
+                print("#C25.1 - Nothing to show")
+            # Chapter_22()
+            # Chapter_23()
+            # Chapter_24()
+            # Chapter_25()
+        class Part_VI:
+            def Chapter_26():
+
+            Chapter_26() #Page 836/1594
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
@@ -593,5 +622,6 @@ class Book:
 
 # Book._blank.Part_II
 # Book._blank.Part_III
-Book._blank.Part_IV
+# Book._blank.Part_IV
+Book._blank.Part_V
 # Book._Worker
