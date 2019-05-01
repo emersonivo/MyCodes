@@ -625,7 +625,8 @@ class Book:
 # Book._blank.Part_III
 # Book._blank.Part_IV
 # Book._blank.Part_V
-MyObj = Book._blank.Part_VI()
-MyObj.Chapter_26("John")
+# MyObj = Book._blank.Part_VI()
+# MyObj.Chapter_26("John")
+Book._blank.Part_VI()
 #Book._blank.Part_VI
 # Book._Worker
