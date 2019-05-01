@@ -603,9 +603,10 @@ class Book:
             # Chapter_24()
             # Chapter_25()
         class Part_VI:
-            def Chapter_26():
+            def Chapter_26(self, namex = 'Bob'):
+                print("#C26.1 - Class: ", namex)
+            #def Chapter_27():
 
-            Chapter_26() #Page 836/1594
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
@@ -623,5 +624,8 @@ class Book:
 # Book._blank.Part_II
 # Book._blank.Part_III
 # Book._blank.Part_IV
-Book._blank.Part_V
+# Book._blank.Part_V
+MyObj = Book._blank.Part_VI()
+MyObj.Chapter_26("John")
+#Book._blank.Part_VI
 # Book._Worker
