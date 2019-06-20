@@ -603,8 +603,32 @@ class Book:
             # Chapter_24()
             # Chapter_25()
         class Part_VI:
-            def Chapter_26(self, namex = 'Bob'):
-                print("#C26.1 - Class: ", namex)
+            def Chapter_26_1():
+                class C2: ... #page 842/1594
+                class C3: ...
+                        
+                class C1(C2, C3):
+                    def setname(self, who):
+                        self.name = who
+                I1 = C1()
+                I2 = C1()
+                I1.setname('Bob')
+                I2.setname('Sue')
+                print("#C26.1 - Class: ", I1.name)
+
+            def Chapter_26_2():
+                class C2: ... #page 842/1594
+                class C3: ...
+                        
+                class C1(C2, C3):
+                    def __init__(self, who):
+                        self.name = who
+                I1 = C1('Joe')
+                I2 = C1('Mary')
+                print("#C26.2 - Class: ", I1.name)
+
+            Chapter_26_1()
+            Chapter_26_2()
             #def Chapter_27():
 
     class _Worker: #page 181/1594
