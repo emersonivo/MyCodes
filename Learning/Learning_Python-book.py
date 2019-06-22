@@ -627,9 +627,29 @@ class Book:
                 I2 = C1('Mary')
                 print("#C26.2 - Class: ", I1.name)
 
-            Chapter_26_1()
-            Chapter_26_2()
-            #def Chapter_27():
+            #Chapter_26_1()
+            #Chapter_26_2()
+            def Chapter_27():
+                class FirstClass: #853/1594
+                    def setdata(self, value):
+                        self.data = value
+                    def display(self):
+                        print("27.1 - FirstClass: ", self.data)
+                    
+                x = FirstClass()
+                y = FirstClass()
+                x.setdata("King Arthur")
+                y.setdata(3.14159)
+                #x.display()
+                #y.display()
+
+                class SecondClass(FirstClass): #857.1594
+                    def display(self):
+                        print("27.2 - SecondClass: ", 'Current value = "%s"' % self.data)
+                z = SecondClass()
+                z.setdata(42)
+                z.display()
+            Chapter_27()
 
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
