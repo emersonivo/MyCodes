@@ -648,7 +648,37 @@ class Book:
                         print("27.2 - SecondClass: ", 'Current value = "%s"' % self.data)
                 z = SecondClass()
                 z.setdata(42)
-                z.display()
+                #z.display()
+
+                class ThirdClass(SecondClass): #859/1594
+                    def __init__(self,value):
+                        self.data = value
+                    def __add__(self, other):
+                        return ThirdClass(self.data + other)
+                    def __str__(self):
+                        return '[ThirdClass: %s]' % self.data
+                    def mul(self, other):
+                        self.data *= other
+                    
+                # a = ThirdClass('abc')
+                # a.display()
+                # print("27.3 - ", a)
+                # b = a + 'xyz'
+                # b.display()
+                # print("27.4 - ", b)
+                # a.mul(3)
+                # print("27.5 - ", a)
+
+                class rec: pass
+                    
+                rec.name = 'Bob'
+                rec.age = '40'
+                print("27.5 - ", rec.name)
+                x = rec()
+                y = rec()
+                print("27.6 - ", x.name, y.age)
+                x.name = 'Sue'
+                print("27.7 - ", rec.name, x.name, y.name)
             Chapter_27()
 
     class _Worker: #page 181/1594
