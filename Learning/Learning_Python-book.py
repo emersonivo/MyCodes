@@ -732,13 +732,47 @@ class Book:
                 #except IndexError:
                     #print('#C33.1.2 - Got exception')
 
-                def catcher(): #1138/1594
+                def catcher1(): #1138/1594
                     try:
                         print('#C33.2.1', fetcher(x, 4))
                     except IndexError:
                         print('#C33.2.2 - Got exception')
                     print('#C33.2.3 - continuing')
-                catcher()
+                catcher1()
+                
+                def catcher2(val): #1139/1594
+                    try:
+                        print('#C33.3.1', fetcher(x, val))
+                    except IndexError:
+                        print('#C33.3.2 - Index Error', val)
+                        val = val -1
+                        catcher2(val)
+                    
+                catcher2(8)
+                class badEnding_small(Exception): pass
+                class badEnding_large(Exception): pass
+                def doStuff(val):
+                    if val == 3:
+                        return 'Good'
+                    elif val < 3:
+                        raise badEnding_small
+                    elif val > 3:
+                        raise badEnding_large()                
+                    
+                def goodEnding(val):
+                    print("#C33.4.3 Good", val)
+
+                val = 2
+                if __name__ == '__main__':
+                    try:
+                        print("#C33.4.1 ", doStuff(val))
+                    except badEnding_small:
+                        print("#C33.4.2 small value: ", val)
+                    except badEnding_large:
+                        print("#C33.4.2 small large: ", val)
+                    # else:
+                    #     goodEnding(val)
+                                   
             Chapter_33()
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
