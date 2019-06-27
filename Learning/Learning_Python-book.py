@@ -615,7 +615,6 @@ class Book:
                 I1.setname('Bob')
                 I2.setname('Sue')
                 print("#C26.1 - Class: ", I1.name)
-
             def Chapter_26_2():
                 class C2: ... #page 842/1594
                 class C3: ...
@@ -626,9 +625,6 @@ class Book:
                 I1 = C1('Joe')
                 I2 = C1('Mary')
                 print("#C26.2 - Class: ", I1.name)
-
-            #Chapter_26_1()
-            #Chapter_26_2()
             def Chapter_27():
                 class FirstClass: #853/1594
                     def setdata(self, value):
@@ -673,14 +669,77 @@ class Book:
                     
                 rec.name = 'Bob'
                 rec.age = '40'
-                print("27.5 - ", rec.name)
+                #print("27.5 - ", rec.name)
                 x = rec()
                 y = rec()
-                print("27.6 - ", x.name, y.age)
+                #print("27.6 - ", x.name, y.age)
                 x.name = 'Sue'
-                print("27.7 - ", rec.name, x.name, y.name)
-            Chapter_27()
+                #print("27.7 - ", rec.name, x.name, y.name)
 
+                class Person:
+                    def __init__(self, name, jobs, age=None):
+                        self.name = name
+                        self.jobs = jobs
+                        self.age = age
+                    def info(self):
+                        return(self.name, self.jobs)
+
+                rec1 = Person('Bob', ['dev', 'mgr'], 40.5)
+                rec2 = Person('Sue', ['dev', 'cto'])
+                print("27.8 - rec1.jobs", rec1.jobs)
+                print("27.9 - rec2.info", rec2.info())
+            def Chapter_28():
+                class Person1:
+                    def __init__(self, name, job=None, pay=0):
+                        self.name = name
+                        self.job = job
+                        self.pay = pay
+                bob = Person1('Bob Smith')
+                sue = Person1('Sue Jones', job='dev', pay=100000)
+                #print("#C28.1.1 ", bob.name, bob.pay)
+                #print("#C28.1.2 ", sue.name, sue.pay)
+
+                class Person2:
+                    def __init__(self, name, job=None, pay=0):
+                        self.name = name
+                        self.job = job
+                        self.pay = pay
+                
+                if __name__ == '__main__':
+                    # self-test code
+                    bob = Person2('Bob Smith')
+                    sue = Person2('Sue Jones', job='dev', pay=100000)
+                    #print("#C28.2.1 ", bob.name, bob.pay)
+                    #print("#C28.2.2 ", sue.name, sue.pay)
+
+            def Chapter_29(): ...
+            def Chapter_30(): ...
+            def Chapter_31(): ...
+            def Chapter_32(): ...
+            #Chapter_26_1()
+            #Chapter_26_2()
+            #Chapter_27()
+            #Chapter_28()
+
+        class Part_VII:
+            def Chapter_33():
+                def fetcher(obj, index):
+                    return obj[index]
+                
+                x = 'spam'
+                #try:
+                    #print('#C33.1.1', fetcher(x, 3))
+                #except IndexError:
+                    #print('#C33.1.2 - Got exception')
+
+                def catcher(): #1138/1594
+                    try:
+                        print('#C33.2.1', fetcher(x, 4))
+                    except IndexError:
+                        print('#C33.2.2 - Got exception')
+                    print('#C33.2.3 - continuing')
+                catcher()
+            Chapter_33()
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
@@ -701,6 +760,7 @@ class Book:
 # Book._blank.Part_V
 # MyObj = Book._blank.Part_VI()
 # MyObj.Chapter_26("John")
-Book._blank.Part_VI()
+# Book._blank.Part_VI()
+Book._blank.Part_VII()
 #Book._blank.Part_VI
 # Book._Worker
