@@ -732,48 +732,58 @@ class Book:
                 #except IndexError:
                     #print('#C33.1.2 - Got exception')
 
-                def catcher1(): #1138/1594
-                    try:
-                        print('#C33.2.1', fetcher(x, 4))
-                    except IndexError:
-                        print('#C33.2.2 - Got exception')
-                    print('#C33.2.3 - continuing')
-                catcher1()
+                # def catcher1(): #1138/1594
+                #     try:
+                #         print('#C33.2.1', fetcher(x, 4))
+                #     except IndexError:
+                #         print('#C33.2.2 - Got exception')
+                #     print('#C33.2.3 - continuing')
+                # catcher1()
                 
-                def catcher2(val): #1139/1594
-                    try:
-                        print('#C33.3.1', fetcher(x, val))
-                    except IndexError:
-                        print('#C33.3.2 - Index Error', val)
-                        val = val -1
-                        catcher2(val)
+                # def catcher2(val): #1139/1594
+                #     try:
+                #         print('#C33.3.1', fetcher(x, val))
+                #     except IndexError:
+                #         print('#C33.3.2 - Index Error', val)
+                #         val = val -1
+                #         catcher2(val)
                     
-                catcher2(8)
+                # catcher2(8)
                 class badEnding_small(Exception): pass
                 class badEnding_large(Exception): pass
-                def doStuff(val):
-                    if val == 3:
-                        return 'Good'
-                    elif val < 3:
+                def doStuff(obj, index):
+                    if val in range(0, len(x)):
+                        return obj[index]
+                    elif val < 0:
                         raise badEnding_small
-                    elif val > 3:
-                        raise badEnding_large()                
+                    elif val > len(x) - 1:
+                        raise badEnding_large()            
                     
                 def goodEnding(val):
                     print("#C33.4.3 Good", val)
 
-                val = 2
+                val = 3
                 if __name__ == '__main__':
                     try:
-                        print("#C33.4.1 ", doStuff(val))
+                        print("#C33.4.1 ", doStuff(x, val))
                     except badEnding_small:
                         print("#C33.4.2 small value: ", val)
                     except badEnding_large:
-                        print("#C33.4.2 small large: ", val)
+                        print("#C33.4.2 large value: ", val)
                     # else:
                     #     goodEnding(val)
-                                   
-            Chapter_33()
+
+            def Chapter_34(): #1145/1594
+                class name1(Exception): pass
+                class name2(Exception): pass
+                class name3(Exception): pass
+                def doSomething():
+                    try:
+                        
+            #Chapter_33()
+            Chapter_34()
+
+
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
