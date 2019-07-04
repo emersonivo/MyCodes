@@ -774,12 +774,36 @@ class Book:
                     #     goodEnding(val)
 
             def Chapter_34(): #1145/1594
+                import numbers
+                val = input("Value: ")
                 class name1(Exception): pass
                 class name2(Exception): pass
                 class name3(Exception): pass
-                def doSomething():
+                class name4(Exception): pass
+                def doSomething(val):
                     try:
-                        
+                        if val == "bala":
+                            raise name1
+                        elif val == "bela":
+                            raise name3
+                        elif val == "bila":
+                            raise name2
+                        elif val == "bola":
+                            raise name4
+                    except name1:
+                        val = val.replace('a', 'x')
+                        print("#C34.1.1: name1 ", val)
+                    except (name2, name3):
+                        val = val.split('l')[0]
+                        print("#C34.1.2: name2, name3 ", val)
+                    except name4 as val:
+                        print("#C34.1.3: name4", val)
+                    # except:
+                    #     print("#C34.1.4: all others ", val)
+                    # # else:
+                    # #     print("#C34.1.5: else ", val)
+                
+                doSomething(val)
             #Chapter_33()
             Chapter_34()
 
