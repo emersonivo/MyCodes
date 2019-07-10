@@ -8,14 +8,23 @@
 
 import re
 import os
-with open("Text1", "r") as sources:
+with open("newfile.txt", "r") as sources:
     lines = sources.readlines()
-with open("output.txt", "w") as destx:
+with open("newfile.txt", "w") as destx:
     #print(lines)
     for line in lines:
         #upx = (re.sub(r'$', ';', line))
         #print(upx)
-        destx.write(re.sub(r'$', ';', line))
+        if "print \"" in line:
+            line = re.sub(r'print \"', 'print(\"', line)
+            line = re.sub('\n', '', line)
+            line = re.sub(r'$', ')', line)
+            #destx.write(line+'\n')
+            #destx.write(re.sub(r'print \"', 'print(\"', line))
+        else:
+            line = re.sub('\n', '', line)
+            #destx.write(line)
+        destx.write(line+'\n')
 destx.close()
 sources.close()
 

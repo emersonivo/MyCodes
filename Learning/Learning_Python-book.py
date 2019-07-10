@@ -775,7 +775,7 @@ class Book:
 
             def Chapter_34(): #1145/1594
                 import numbers
-                val = input("Value: ")
+                #val = input("Value: ")
                 class name1(Exception): pass
                 class name2(Exception): pass
                 class name3(Exception): pass
@@ -803,10 +803,21 @@ class Book:
                     # # else:
                     # #     print("#C34.1.5: else ", val)
                 
-                doSomething(val)
-            #Chapter_33()
-            Chapter_34()
+                #doSomething(val)
 
+                def with_with():
+                    with open('newfile.txt') as fin, open('newfile.del', 'w') as fout:
+                        for line in fin:
+                            fout.write(line.upper())
+                with_with()    
+            #def Chapter_35() #Page 1178/1594
+            def Chapter_36(): #Page 1196/1594
+
+
+            # Chapter_33()
+            # Chapter_34()
+            # Chapter_35()
+            Chapter_36()
 
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
