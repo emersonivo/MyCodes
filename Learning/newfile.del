@@ -1,0 +1,4 @@
+PRINT("LINE1 #")
+PRINT("LINE2 # ...", VAR)
+NO PRINT HERE "LINE3 ..."
+PRINT("## LINE4 ## ...")

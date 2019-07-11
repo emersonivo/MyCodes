@@ -1,6 +1,7 @@
 #!/usr/bin/python3.6
 import re
 import os
+import sys
 #import sys
 homedir = os.getcwd()
 class Book:
@@ -810,15 +811,15 @@ class Book:
                         for line in fin:
                             fout.write(line.upper())
                 with_with()    
-            #def Chapter_35() #Page 1178/1594
-            def Chapter_36(): #Page 1196/1594
-
-
+            
             # Chapter_33()
             # Chapter_34()
-            # Chapter_35()
-            Chapter_36()
 
+        class Part_VIII:
+            def Chapter_37():
+                
+
+            Chapter_37()
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
             self.name = name
@@ -841,5 +842,6 @@ class Book:
 # MyObj.Chapter_26("John")
 # Book._blank.Part_VI()
 Book._blank.Part_VII()
+Book._blank.Part_VIII()
 #Book._blank.Part_VI
 # Book._Worker
