@@ -19,7 +19,7 @@ class Book:
                     print("#C4.3 Set1:", Set1, "Set2:", Set2)
                     for l in Set2:
                         Set1.add(l)
-                    print('#C4.4: ', Set1)
+                    print('#C4.4 set1 + set2: ', Set1)
                 def _Object(): #Page 180/1594
                     _Set = set('123415671890')
                     _MyDict = dict(a='1', b='2')
@@ -63,17 +63,17 @@ class Book:
                 print ("#C7.7 - join: ", ','.join('string1 string2'))
                 print ("#C7.8 - encode:", MyString.encode('latin-1'))
                 MyShort = "Salve o Tricolor"
-                for x in MyShort: print ("#9 - iteration: ", x)
+                for x in MyShort: print ("#C7.9 - iteration: ", x)
 
-                print ("#C7.9 - iteration: ", 'Tricolor' in MyString)
-                print ("#C7.10 - map; ", map(ord, MyShort))
-                print ("#C7.11 - match: ", re.match('Tri(.*)or', MyShort)) #Do not Work
-                print ("#C7.12 - match: ", re.match('Tri(.*)or', MyShort)) #Do not work
+                print ("#C7.10 - iteration: ", 'Tricolor' in MyString)
+                print ("#C7.11 - map; ", map(ord, MyShort))
+                print ("#C7.12 - match: ", re.match('Tri(.*)or', MyShort)) #Do not Work
+                print ("#C7.13 - match: ", re.match('Tri(.*)or', MyShort)) #Do not work
                 MyLong = """
                 This is the first line
                 And this is the second"""
-                print ("#C7.13 - MyLong", MyLong)
-                print ("#C7.14", "-" * 15)
+                print ("#C7.14 - MyLong", MyLong)
+                print ("#C7.15", "-" * 15)
                 #for c in MyShort: print("#C7.15 :", c, end='') Do not work
                 print ("#C7.16 - Slicing :", MyShort[1:16:2])
                 print ("#C7.17 - Slicing :", MyShort[::2])
@@ -712,7 +712,6 @@ class Book:
                     sue = Person2('Sue Jones', job='dev', pay=100000)
                     #print("#C28.2.1 ", bob.name, bob.pay)
                     #print("#C28.2.2 ", sue.name, sue.pay)
-
             def Chapter_29(): ...
             def Chapter_30(): ...
             def Chapter_31(): ...
@@ -721,7 +720,6 @@ class Book:
             #Chapter_26_2()
             #Chapter_27()
             #Chapter_28()
-
         class Part_VII:
             def Chapter_33():
                 def fetcher(obj, index):
@@ -773,7 +771,6 @@ class Book:
                         print("#C33.4.2 large value: ", val)
                     # else:
                     #     goodEnding(val)
-
             def Chapter_34(): #1145/1594
                 import numbers
                 #val = input("Value: ")
@@ -814,11 +811,9 @@ class Book:
             
             # Chapter_33()
             # Chapter_34()
-
         class Part_VIII:
             def Chapter_37():
-                
-
+                print("The End")
             Chapter_37()
     class _Worker: #page 181/1594
         def __init__ (self, name, pay):
@@ -834,14 +829,5 @@ class Book:
         #emp2.giveRaise(.10)
         #print(emp2.pay)
 
-# Book._blank.Part_II
-# Book._blank.Part_III
-# Book._blank.Part_IV
-# Book._blank.Part_V
-# MyObj = Book._blank.Part_VI()
-# MyObj.Chapter_26("John")
-# Book._blank.Part_VI()
-Book._blank.Part_VII()
-Book._blank.Part_VIII()
-#Book._blank.Part_VI
+Book._blank.Part_II.Chapter_7()
 # Book._Worker
